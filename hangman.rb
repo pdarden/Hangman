@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-bank = ["apple"]
+bank = ["apple", "banana", "cherry"]
 guesses_left = 8
 answer = bank.sample
 letters = answer.split("")
@@ -30,7 +30,7 @@ while count == 0
   print "Guess a single letter (a-z or A-Z) or the entire word: "
   input = gets.chomp.downcase
 
-  if input.match(/\A[a-zA-Z]\z/) == nil
+  if input.match(/\A[a-zA-Z]+\z/) == nil
     puts "That is not a valid input"
   else
     if letters.include?(input)
